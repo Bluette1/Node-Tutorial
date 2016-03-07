@@ -33,32 +33,23 @@ var productsMap ={};
 
 
 for(i=0;i<listArray.length;i=i+products.length){
-  var a = listArray[i].split(",");
+
+var dArray =[];
+for(n=0;n<products.length;n++){
+  var index =i+n;
+   var a = listArray[index].split(",");
+   dArray.push(a[2]);
 
 
-  var b =listArray[i+1].split(",");
-
-
-  var c =listArray[i+2].split(",");
-
-
-  var dArray =[];
-
-dArray.push(a[2]);
-
-
-dArray.push(b[2]);
-
-
-dArray.push(c[2]);
-
-
+}
 
 
 for (j = 0; j <products.length; j++) {
 
   productsMap[j].push(dArray[j]);
 
+
+}
 
 }
 
@@ -79,14 +70,14 @@ productsMapResult[products[k]].push(total);
 
 }
 
-}
+
 
 
 return productsMapResult;
 
 };
 
-
+console.log(productssold('./files/products.csv'));
 
 module.exports = function(theFile){
 
